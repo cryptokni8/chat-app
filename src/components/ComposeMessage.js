@@ -20,7 +20,7 @@ const ComposeMessage = props => {
   );
 };
 
-ComposeMessage.PropTypes = {
+ComposeMessage.propTypes = {
   send: PropTypes.func.isRequired
 };
 

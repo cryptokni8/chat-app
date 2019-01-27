@@ -11,7 +11,7 @@ const Users = ({ users }) => (
   </aside>
 );
 
-Users.PropTypes = {
+Users.propTypes = {
   users: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,

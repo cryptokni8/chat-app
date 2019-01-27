@@ -3,14 +3,14 @@ import * as types from "../constants/ActionTypes";
 let nextMessageId = 0;
 let nextUserId = 0;
 
-export const outgoingMessage = (message, author) => ({
+export const sendMessage = (message, author) => ({
   type: types.SEND_MESSAGE,
   id: nextMessageId++,
   message,
   author
 });
 
-export const incomingMessage = (message, author) => ({
+export const receiveMessage = (message, author) => ({
   type: types.MESSAGE_RECEIVED,
   id: nextMessageId++,
   message,

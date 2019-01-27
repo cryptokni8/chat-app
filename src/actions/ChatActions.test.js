@@ -1,5 +1,5 @@
 import * as types from "../constants/ActionTypes";
-import { outgoingMessage, addUser } from "./ChatActions";
+import { sendMessage, receiveMessage, addUser } from "./ChatActions";
 
 describe("send a new message", () => {
   it("should create an action for new message with id zero", () => {
@@ -11,9 +11,9 @@ describe("send a new message", () => {
       author,
       id: 0
     };
-    expect(outgoingMessage(message, author)).toEqual(action);
+    expect(sendMessage(message, author)).toEqual(action);
   });
-    
+
   it("should create an action for new user with id zero", () => {
     const name = "Test User";
     const action = {
@@ -22,5 +22,17 @@ describe("send a new message", () => {
       id: 0
     };
     expect(addUser(name)).toEqual(action);
+  });
+
+  it("should create an action for new received msg id zero", () => {
+    const author = "Test User";
+    const message = "Hey";
+    const action = {
+      type: types.MESSAGE_RECEIVED,
+      message,
+      author,
+      id: 1
+    };
+    expect(receiveMessage(message, author)).toEqual(action);
   });
 });
