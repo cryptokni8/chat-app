@@ -1,29 +1,29 @@
-import * as types from "../constants/ActionTypes";
+import {SEND_MESSAGE, MESSAGE_RECEIVED, ADD_USER, ALL_USERS} from "../constants/ActionTypes";
 
 let nextMessageId = 0;
 let nextUserId = 0;
 
 export const sendMessage = (message, author) => ({
-  type: types.SEND_MESSAGE,
+  type: SEND_MESSAGE,
   id: nextMessageId++,
   message,
   author
 });
 
 export const receiveMessage = (message, author) => ({
-  type: types.MESSAGE_RECEIVED,
+  type: MESSAGE_RECEIVED,
   id: nextMessageId++,
   message,
   author
 });
 
 export const addUser = name => ({
-  type: types.ADD_USER,
+  type: ADD_USER,
   id: nextUserId++,
   name
 });
 
-export const allUsers = users => ({
-  type: types.ALL_USERS,
+export const showUsers = users => ({
+  type: ALL_USERS,
   users
 });

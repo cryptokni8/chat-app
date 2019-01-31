@@ -5,15 +5,13 @@ const ComposeMessage = props => {
   let textInput;
   return (
     <section id="new-message">
-      <input
+      <textarea
         onKeyPress={e => {
-          
           if (e.key === "Enter") {
-            props.send(textInput.value, "Me");
+            props.send(textInput.value);
             textInput.value = "";
           }
         }}
-        type="text"
         ref={node => (textInput = node)}
       />
     </section>

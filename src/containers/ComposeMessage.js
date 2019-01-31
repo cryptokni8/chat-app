@@ -1,10 +1,10 @@
 import { connect } from "react-redux";
 import ComposeMessage from "../components/ComposeMessage";
-import { outgoingMessage } from "../actions/ChatActions";
+import { sendMessage } from "../actions/ChatActions";
 
 const mapDispatchToProps = dispatch => ({
-  send: (message, author) => {
-    dispatch(outgoingMessage(message, author));
+  send: (message, author = "Me") => {
+    dispatch(sendMessage(message, author));
   }
 });
 
