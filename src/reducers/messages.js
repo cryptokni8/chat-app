@@ -1,13 +1,13 @@
-import * as types from "../constants/ActionTypes";
+import {SEND_MESSAGE, MESSAGE_RECEIVED} from "../constants/ActionTypes";
 
 const messages = (state = [], action) => {
   switch (action.type) {
-    case types.MESSAGE_RECEIVED:
-    case types.SEND_MESSAGE:
+    case MESSAGE_RECEIVED:
+    case SEND_MESSAGE:
       let { id, message, author } = action;
-      return state.concat([
+      return state.concat(
         { id, message, author }
-      ]);
+      );
     default:
       return state;
   }
